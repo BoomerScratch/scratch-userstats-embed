@@ -28,7 +28,7 @@ var featuredProjectThumbnailURL = featuredProjectData.thumbnail_url
 var featuredProjectProjectID = featuredProjectData.id
 var featuredProjectTitle = featuredProjectData.title
 }
-}
+})
 }
 createElements()
 }
