@@ -7,7 +7,7 @@ function getParameterByName(name, url) {
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 } // https://stackoverflow.com/a/901144
-function getUserData() {
+function start(){
 var messageCountJSON = $.ajax({type:"GET",url:"https://cors-anywhere.herokuapp.com/https://api.scratch.mit.edu/users/" + user + "/messages/count",dataType:"json"})
 messageCountJSON.done(function(){
 var otherData = $.ajax({type:"GET",url:"https://cors-anywhere.herokuapp.com/https://scratch.mit.edu/site-api/users/all/" + user,dataType:"json"})
@@ -30,10 +30,6 @@ var featuredProjectTitle = featuredProjectData.title
 }
 })
 })
-createElements()
-}
-function createElements(){
-var username = ajaxResponse.username
 function removeElement(elementId) {
     var element = document.getElementById(elementId);
     element.parentNode.removeChild(element);
@@ -144,4 +140,4 @@ elem.removeAttribute('height')
 if (getParameterByName("user") == null) window.location.href = "https://boomerscratch.github.io/scratch-userstats-embed/embed?user=Boomer001"
 var user = getParameterByName("user")
 var ajaxResponse = $.ajax({type:"GET",url:"https://cors-anywhere.herokuapp.com/https://api.scratch.mit.edu/users/" + user,dataType:"json"})
-ajaxResponse.done(function(){if (ajaxResponse.responseJSON.message == undefined) {ajaxResponse = ajaxResponse.responseJSON;getUserData()} else {errorMessage()}})
+ajaxResponse.done(function(){if (ajaxResponse.responseJSON.message == undefined) {ajaxResponse = ajaxResponse.responseJSON;start()} else {errorMessage()}})
