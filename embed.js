@@ -29,7 +29,7 @@ var featuredProjectProjectID = featuredProjectData.id
 var featuredProjectTitle = featuredProjectData.title
 }
 })
-}
+})
 createElements()
 }
 function createElements(){
