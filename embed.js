@@ -8,11 +8,11 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 } // https://stackoverflow.com/a/901144
 function getUserData() {
-var messageCount = $.ajax({type:"GET",url:"https://cors-anywhere.herokuapp.com/https://api.scratch.mit.edu/users/" + user + "/messages/count",dataType:"json"})
-messageCount.done(function(){
+var messageCountJSON = $.ajax({type:"GET",url:"https://cors-anywhere.herokuapp.com/https://api.scratch.mit.edu/users/" + user + "/messages/count",dataType:"json"})
+messageCountJSON.done(function(){
 var otherData = $.ajax({type:"GET",url:"https://cors-anywhere.herokuapp.com/https://scratch.mit.edu/site-api/users/all/" + user,dataType:"json"})
 otherData.done(function(){
-var messageCount = messageCount.count
+var messageCount = messageCountJSON.count
 var userID = ajaxResponse.id
 var username = ajaxResponse.username
 var isScratchTeamMember = ajaxResponse.scratchteam
