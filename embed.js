@@ -14,7 +14,7 @@ var otherData = $.ajax({type:"GET",url:"https://cors-anywhere.herokuapp.com/http
 otherData.done(function(){
 var messageCount = messageCountJSON.count
 var userID = ajaxResponse.id
-var Username = ajaxResponse.username
+var getUsername = ajaxResponse.username
 var isScratchTeamMember = ajaxResponse.scratchteam
 var joinDate = ajaxResponse.history.joined
 var pfpSRC = "https://uploads.scratch.mit.edu/users/avatars/" + userID + ".png"
@@ -37,7 +37,7 @@ function removeElement(elementId) {
 removeElement('status')
 removeElement('status-image')
 var elem = document.createElement('a')
-elem.href = "https://scratch.mit.edu/users/" + Username
+elem.href = "https://scratch.mit.edu/users/" + getUsername
 elem.class = "user-icon"
 elem.target = "_blank"
 document.getElementsByTagName('body')[0].appendChild(elem)
@@ -48,7 +48,7 @@ elem.src = pfpSRC
 document.getElementsByClassName('user-icon')[0].appendChild(elem)
 var elem = document.createElement('h1')
 document.getElementsByTagName('body')[0].appendChild(elem)
-elem.innerText = Username
+elem.innerText = getUsername
 if (isScratchTeamMember) {
 var elem = document.createElement('h2')
 document.getElementsByTagName('body')[0].appendChild(elem)
