@@ -140,7 +140,7 @@ elem.src = "https://en.scratch-wiki.info/w/images/archive/20130716144246%21404_I
 elem.removeAttribute('width')
 elem.removeAttribute('height')
 }
-if (getParameterByName("user") == null) window.location.href = "https://boomerscratch.github.io/scratch-userstats-embed/embed/?user=Boomer001"
+if (getParameterByName("user") == null) window.location.href = "https://boomerscratch.github.io/scratch-userstats-embed/embed?user=Boomer001"
 var user = getParameterByName("user")
 var ajaxResponse = $.ajax({type:"GET",url:"https://cors-anywhere.herokuapp.com/https://api.scratch.mit.edu/users/" + user,dataType:"json"})
 ajaxResponse.done(function(){if (ajaxResponse.responseJSON.message == undefined) {getUserData()} else {errorMessage()}})
