@@ -14,7 +14,7 @@ var otherData = $.ajax({type:"GET",url:"https://cors-anywhere.herokuapp.com/http
 otherData.done(function(){
 var messageCount = messageCountJSON.count
 var userID = ajaxResponse.id
-var Username = ajaxResponse
+var Username = ajaxResponse.username
 var isScratchTeamMember = ajaxResponse.scratchteam
 var joinDate = ajaxResponse.history.joined
 var pfpSRC = "https://uploads.scratch.mit.edu/users/avatars/" + userID + ".png"
