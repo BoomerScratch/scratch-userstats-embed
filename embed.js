@@ -27,8 +27,8 @@ var featuredProjectData = otherData.featured_project_data
 var featuredProjectThumbnailURL = featuredProjectData.thumbnail_url
 var featuredProjectProjectID = featuredProjectData.id
 var featuredProjectTitle = featuredProjectData.title
-})
-})
+}
+}
 function removeElement(elementId) {
     var element = document.getElementById(elementId);
     element.parentNode.removeChild(element);
