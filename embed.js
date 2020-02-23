@@ -33,6 +33,7 @@ var featuredProjectTitle = featuredProjectData.title
 createElements()
 }
 function createElements(){
+var username = ajaxResponse.username
 function removeElement(elementId) {
     var element = document.getElementById(elementId);
     element.parentNode.removeChild(element);
