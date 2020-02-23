@@ -27,7 +27,7 @@ var featuredProjectData = otherData.featured_project_data;
 var featuredProjectThumbnailURL = featuredProjectData.thumbnail_url;
 var featuredProjectProjectID = featuredProjectData.id;
 var featuredProjectTitle = featuredProjectData.title;
-};
+});
 });
 function removeElement(elementId) {
     var element = document.getElementById(elementId);
@@ -128,7 +128,7 @@ document.getElementsByTagName('body')[0].appendChild(elem);
 var elem = document.createElement('h5');
 document.getElementsByClassName('BottomText2')[0].appendChild(elem);
 elem.innerText = "Github";
-});
+};
 function errorMessage(){
 document.getElementById('status').innerText = "Oops! Something went wrong! Status: " + ajaxResponse.status;
 var elem = document.querySelector('img');
