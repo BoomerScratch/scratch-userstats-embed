@@ -139,4 +139,4 @@ elem.removeAttribute('height')
 if (getParameterByName("user") == null) window.location.href = "https://boomerscratch.github.io/scratch-userstats-embed/embed?user=Boomer001"
 var user = getParameterByName("user")
 var ajaxResponse = $.ajax({type:"GET",url:"https://cors-anywhere.herokuapp.com/https://api.scratch.mit.edu/users/" + user,dataType:"json"})
-ajaxResponse.done(function(){if (ajaxResponse.responseJSON.message == undefined) {ajaxResponse = ajaxResponse.responseJSON;start()} else {errorMessage()}})
+ajaxResponse.done(function(){if (ajaxResponse.responseJSON.message == undefined) {ajaxResponse = ajaxResponse.responseJSON;start()} else {errorMessage()}})}
