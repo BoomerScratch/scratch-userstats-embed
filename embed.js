@@ -144,4 +144,4 @@ getotherdata = getotherdata.responseJSON
 getotherdata.done(function(getajaxresponse,getmessagecountjson,getotherdata){
     start(getajaxresponse,getmessagecountjson,getotherdata)
 })
-} else {errorMessage(getajaxresponse)}});
+} else {errorMessage(getajaxresponse)}}));
