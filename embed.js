@@ -110,7 +110,7 @@ elem.setAttribute("class","BottomText1")
 document.getElementsByTagName('center')[0].appendChild(elem);
 var elem = document.createElement('h5');
 document.getElementsByClassName('BottomText1')[0].appendChild(elem);
-elem.innerText = "Scratch user embed by Boomer001";
+elem.innerText = "Scratch userstats embed by Boomer001";
 var elem = document.createElement('a');
 elem.href = "https://github.com/boomerscratch/scratch-userstats-embed";
 elem.target = "_blank";
