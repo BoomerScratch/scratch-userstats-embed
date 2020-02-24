@@ -9,9 +9,11 @@ function getParameterByName(name, url) {
 } // https://stackoverflow.com/a/901144
 function start() {
 var messageCountJSON = $.ajax({type:"GET",url:"https://cors-anywhere.herokuapp.com/https://api.scratch.mit.edu/users/" + user + "/messages/count",dataType:"json"});
-messageCountJSON.done(function(){
+messageCountJSON.done(function(){continue1()})
+    function continue1() {
 var otherData = $.ajax({type:"GET",url:"https://cors-anywhere.herokuapp.com/https://scratch.mit.edu/site-api/users/all/" + user,dataType:"json"});
-otherData.done(function(){
+otherData.done(function(){continue2()})
+        function continue2() {
 var messageCount = messageCountJSON.count;
 var userID = ajaxResponse.id;
 var getUsername = ajaxResponse.username;
@@ -27,8 +29,6 @@ var featuredProjectData = otherData.featured_project_data;
 var featuredProjectThumbnailURL = featuredProjectData.thumbnail_url;
 var featuredProjectProjectID = featuredProjectData.id;
 var featuredProjectTitle = featuredProjectData.title;
-};
-})
 function removeElement(elementId) {
     var element = document.getElementById(elementId);
     element.parentNode.removeChild(element);
@@ -128,7 +128,8 @@ document.getElementsByTagName('body')[0].appendChild(elem);
 var elem = document.createElement('h5');
 document.getElementsByClassName('BottomText2')[0].appendChild(elem);
 elem.innerText = "Github";
-})
+}
+        }
 function errorMessage(){
 document.getElementById('status').innerText = "Oops! Something went wrong! Status: " + ajaxResponse.status;
 var elem = document.querySelector('img');
