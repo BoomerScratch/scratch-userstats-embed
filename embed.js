@@ -52,7 +52,7 @@ var elem = document.createElement('a');
 elem.href = "https://scratch.mit.edu/projects/" + featuredProjectProjectID;
 elem.target = "_blank";
 elem.setAttribute("class","featuredProject")
-document.getElementsByTagName('body')[0].appendChild(elem);
+document.getElementsByTagName('center')[0].appendChild(elem);
 var elem = document.createElement('img');
 elem.setAttribute("class","autoResize")
 elem.src = featuredProjectThumbnailURL;
@@ -132,6 +132,7 @@ var user = getParameterByName("user");
 var timeOut = setTimeout(function(){errorMessage(getajaxresponse)},4000)
 var getajaxresponse = $.ajax({type:"GET",url:"https://cors-anywhere.herokuapp.com/https://api.scratch.mit.edu/users/" + user,dataType:"json"});
 getajaxresponse.done(function(){if (getajaxresponse.responseJSON.message == undefined) {
+clearTimeout(timeOut)
 getajaxresponse = getajaxresponse.responseJSON
 var getmessagecountjson = $.ajax({type:"GET",url:"https://cors-anywhere.herokuapp.com/https://api.scratch.mit.edu/users/" + user + "/messages/count",dataType:"json"});
 getmessagecountjson.done(function(){
