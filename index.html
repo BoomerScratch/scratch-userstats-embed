@@ -19,9 +19,8 @@ if (document.getElementById('background').checked) {return document.getElementBy
 }
 var ifrm = document.querySelector('iframe')
 document.getElementById('usernameToUse').onchange = function(){ifrm.src="https://boomerscratch.github.io/scratch-userstats-embed/embed?user="+document.getElementById('usernameToUse').value}
-setInterval(function(){if (document.getElementById("background").checked) {ifrm.style.backgroundColor=document.getElementById("color").value} else {ifrm.removeAttribute('style')};ifrm.width = document.getElementById("iframe_width").value;ifrm.height = document.getElementById("iframe_height");ifrm.frameBorder = (document.getElementById("useFrameBorder") + 0
-var toCopy = "<iframe src='https://boomerscratch.github.io/scratch-userstats-embed/embed?user="+document.getElementById('usernameToUse').value+"' width='"+document.getElementById('iframe_width').value+"' height='"+document.getElementById('iframe_height').value+"' style='background-color: "+getColor()+"'></iframe>"
-document.getElementById('copythis').innerText = toCopy)})
+setInterval(function(){if (document.getElementById("background").checked) {ifrm.style.backgroundColor=document.getElementById("color").value} else {ifrm.removeAttribute('style')};ifrm.width = document.getElementById("iframe_width").value;ifrm.height = document.getElementById("iframe_height");ifrm.frameBorder = (document.getElementById("useFrameBorder") + 0)})
+setInterval(function(){var toCopy = "<iframe src='https://boomerscratch.github.io/scratch-userstats-embed/embed?user="+document.getElementById('usernameToUse').value+"' width='"+document.getElementById('iframe_width').value+"' height='"+document.getElementById('iframe_height').value+"' style='background-color: "+getColor()+"'></iframe>";document.getElementById('copythis').innerText = toCopy})
 </script>
 <h3 id='copythis'></h3>
 <h4>Copy the text above and use it on your website!</h4>
