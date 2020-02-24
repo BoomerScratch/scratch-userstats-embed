@@ -28,7 +28,7 @@ document.getElementById('status').parentNode.removeChild(document.getElementById
 document.getElementById('status-image').parentNode.removeChild(document.getElementById('status-image'));
 var elem = document.createElement('a');
 elem.href = "https://scratch.mit.edu/users/" + getUsername;
-elem.class = "user-icon";
+elem.setAttribute("class","user-icon")
 elem.target = "_blank";
 document.getElementsByTagName('body')[0].appendChild(elem);
 var elem = document.createElement('img');
@@ -51,10 +51,10 @@ elem.innerText = featuredProjectLabelName;
 var elem = document.createElement('a');
 elem.href = "https://scratch.mit.edu/projects/" + featuredProjectProjectID;
 elem.target = "_blank";
-elem.class = "featuredProject";
+elem.setAttribute("class","featuredProject")
 document.getElementsByTagName('body')[0].appendChild(elem);
 var elem = document.createElement('img');
-elem.class = "autoResize";
+elem.setAttribute("class","autoResize")
 elem.src = featuredProjectThumbnailURL;
 document.getElementsByClassName('featuredProject')[0].appendChild(elem);
 var elem = document.createElement('h4');
@@ -106,7 +106,7 @@ elem.innerText = "Country";
 var elem = document.createElement('a');
 elem.href = "https://boomerscratch.github.io/scratch-userstats-embed";
 elem.target = "_blank";
-elem.class = "BottomText1";
+elem.setAttribute("class","BottomText1")
 document.getElementsByTagName('body')[0].appendChild(elem);
 var elem = document.createElement('h5');
 document.getElementsByClassName('BottomText1')[0].appendChild(elem);
@@ -114,7 +114,7 @@ elem.innerText = "Scratch user embed by Boomer001";
 var elem = document.createElement('a');
 elem.href = "https://github.com/boomerscratch/scratch-userstats-embed";
 elem.target = "_blank";
-elem.class = "BottomText2";
+elem.setAttribute("class","BottomText2")
 document.getElementsByTagName('body')[0].appendChild(elem);
 var elem = document.createElement('h5');
 document.getElementsByClassName('BottomText2')[0].appendChild(elem);
