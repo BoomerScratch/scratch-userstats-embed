@@ -23,12 +23,9 @@ var featuredProjectData = otherData.featured_project_data;
 var featuredProjectThumbnailURL = featuredProjectData.thumbnail_url;
 var featuredProjectProjectID = featuredProjectData.id;
 var featuredProjectTitle = featuredProjectData.title;
-function removeElement(elementId) {
-    var element = document.getElementById(elementId);
-    element.parentNode.removeChild(element);
 };
-removeElement('status');
-removeElement('status-image');
+document.getElementById('status').parentNode.removeChild(document.getElementById('status'));
+document.getElementById('status-image').parentNode.removeChild(document.getElementById('status-image'));
 var elem = document.createElement('a');
 elem.href = "https://scratch.mit.edu/users/" + getUsername;
 elem.class = "user-icon";
@@ -144,4 +141,4 @@ getotherdata = getotherdata.responseJSON
 getotherdata.done(function(getajaxresponse,getmessagecountjson,getotherdata){
     start(getajaxresponse,getmessagecountjson,getotherdata)
 })
-} else {errorMessage(getajaxresponse)}}));
+})} else {errorMessage(getajaxresponse)}});
