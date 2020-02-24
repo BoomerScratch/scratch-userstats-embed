@@ -141,6 +141,6 @@ messagecountjson.done(function(){
 var otherdata = $.ajax({type:"GET",url:"https://cors-anywhere.herokuapp.com/https://scratch.mit.edu/site-api/users/all/" + user,dataType:"json"});
 otherdata.done(function(){
     start(ajaxresponse,messagecountjson,otherdata)
-    )}
+})
 })
 } else {errorMessage(ajaxresponse)}});
