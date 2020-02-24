@@ -131,16 +131,17 @@ elem.src = "https://en.scratch-wiki.info/w/images/archive/20130716144246%21404_I
 elem.removeAttribute('width');
 elem.removeAttribute('height');
 };
-if (getParameterByName("user") == null) window.location.href = "https://boomerscratch.github.io/scratch-userstats-embed/embed?user=Boomer001";
+if (getParameterByName("user") == null) window.location.href = "https://boomerscratch.github.io/scratch-userstats-embed/embed?user=Boomer001"
 var user = getParameterByName("user");
-var ajaxresponse = $.ajax({type:"GET",url:"https://cors-anywhere.herokuapp.com/https://api.scratch.mit.edu/users/" + user,dataType:"json"});
-ajaxresponse.done(function(){if (ajaxresponse.responseJSON.message == undefined) {
-ajaxresponse = ajaxresponse.responseJSON
-var messagecountjson = $.ajax({type:"GET",url:"https://cors-anywhere.herokuapp.com/https://api.scratch.mit.edu/users/" + user + "/messages/count",dataType:"json"});
-messagecountjson.done(function(){
-var otherdata = $.ajax({type:"GET",url:"https://cors-anywhere.herokuapp.com/https://scratch.mit.edu/site-api/users/all/" + user,dataType:"json"});
-otherdata.done(function(){
-    start(ajaxresponse,messagecountjson,otherdata)
+var getajaxresponse = $.ajax({type:"GET",url:"https://cors-anywhere.herokuapp.com/https://api.scratch.mit.edu/users/" + user,dataType:"json"});
+getajaxresponse.done(function(getajaxresponse){if (getajaxresponse.responseJSON.message == undefined) {
+getajaxresponse = getajaxresponse.responseJSON
+var getmessagecountjson = $.ajax({type:"GET",url:"https://cors-anywhere.herokuapp.com/https://api.scratch.mit.edu/users/" + user + "/messages/count",dataType:"json"});
+getmessagecountjson.done(function(getajaxresponse,getmessagecountjson){
+getmessagecountjson = getmessagecountjson.responseJSON
+var getotherdata = $.ajax({type:"GET",url:"https://cors-anywhere.herokuapp.com/https://scratch.mit.edu/site-api/users/all/" + user,dataType:"json"});
+getotherdata = getotherdata.responseJSON
+getotherdata.done(function(getajaxresponse,getmessagecountjson,getotherdata){
+    start(getajaxresponse,getmessagecountjson,getotherdata)
 })
-})
-} else {errorMessage(ajaxresponse)}});
+} else {errorMessage(getajaxresponse)}});
