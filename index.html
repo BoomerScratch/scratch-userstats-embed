@@ -1,0 +1,27 @@
+<html><head><title>Scratch userstats embed</title><link href="//fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet"><link href="/favicon.png" rel="icon"><link href="/styles.css" rel="stylesheet"><style>
+h1 {
+text-align:center;
+background-color: lightgrey;}
+  </style></head><body><script src="/other-stuff/home-button.js"></script><center>
+  <h1>Scratch userstats embed</h1>
+  <h3>Scratch userstats embed is a iframe element you can put on your website. It has all information of the scratcher you want, directly from your website. It even contains some information you normally can't see, like the message count.</h3>
+  <h2>Create a iframe element for your website!</h2>
+  <div>Username:<input placeholder="Enter username" id="usernameToUse">griffpatch</input></div>
+  <input type="checkbox" id="background">Use custom iframe background color: <input type="color" id="color" value="#e3be7b"></input> (If unchecked, the background will be transparent)</input>
+  <input type="checkbox" id="useFrameBorder">Has frameborder</input>
+<div>Iframe width:<input id="iframe_width" placeholder="width">400</input></div>
+<div>Iframe height:<input id="iframe_height" placeholder="height">400</input></div>
+<div>Preview:</div>
+<iframe></iframe>
+<script>
+function getColor() {
+if (document.getElementById('background').checked) {return document.getElementById('color').value} else {return "transparent"}
+}
+var ifrm = document.querySelector('iframe')
+document.getElementById('usernameToUse').onchange = function(){ifrm.src="https://boomerscratch.github.io/scratch-userstats-embed/embed?user="+document.getElementById('usernameToUse').value}
+setInterval(function(){if (document.getElementById("background").checked) {ifrm.style.backgroundColor=document.getElementById("color").value} else {ifrm.removeAttribute('style')};ifrm.width = document.getElementById("iframe_width").value;ifrm.height = document.getElementById("iframe_height");ifrm.frameBorder = (document.getElementById("useFrameBorder") + 0
+var toCopy = "<iframe src='https://boomerscratch.github.io/scratch-userstats-embed/embed?user="+document.getElementById('usernameToUse').value+"' width='"+document.getElementById('iframe_width').value+"' height='"+document.getElementById('iframe_height').value+"' style='background-color: "+getColor()+"'></iframe>"
+document.getElementById('copythis').innerText = toCopy)})
+</script>
+<h3 id='copythis'></h3>
+<h4>Copy the text above and use it on your website!</h4>
