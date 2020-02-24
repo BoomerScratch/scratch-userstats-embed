@@ -22,7 +22,7 @@ var ifrm = document.querySelector('iframe')
 ifrm.src = "https://boomerscratch.github.io/scratch-userstats-embed/embed?user=griffpatch"
 document.getElementById('usernameToUse').onchange = function(){ifrm.src="https://boomerscratch.github.io/scratch-userstats-embed/embed?user="+document.getElementById('usernameToUse').value}
 setInterval(function(){if (document.getElementById("background").checked) {ifrm.style.backgroundColor=document.getElementById("color").value} else {ifrm.removeAttribute('style')};ifrm.width = document.getElementById("iframe_width").value;ifrm.height = document.getElementById("iframe_height").value;ifrm.frameBorder = (document.getElementById("useFrameBorder").checked + 0)})
-setInterval(function(){var toCopy = "<iframe src='https://boomerscratch.github.io/scratch-userstats-embed/embed?user="+document.getElementById('usernameToUse').value+"' width='"+document.getElementById('iframe_width').value+"' height='"+document.getElementById('iframe_height').value+"' style='background-color: "+getColor()+"' frameborder='"+document.getElementById("useFrameBorder").checked + 0 +"'></iframe>";document.getElementById('copythis').value = toCopy})
+setInterval(function(){var toCopy = "<iframe src='https://boomerscratch.github.io/scratch-userstats-embed/embed?user="+document.getElementById('usernameToUse').value+"' width='"+document.getElementById('iframe_width').value+"' height='"+document.getElementById('iframe_height').value+"' style='background-color: "+getColor()+"' frameborder='"+ (document.getElementById("useFrameBorder").checked + 0) +"'></iframe>";document.getElementById('copythis').value = toCopy})
 </script>
-<input id='copythis'></input>
+<div><input id='copythis'></input></div>
 <h4>Copy the text above and use it on your website!</h4>
