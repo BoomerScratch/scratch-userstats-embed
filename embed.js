@@ -136,8 +136,8 @@ var getmessagecountjson = $.ajax({type:"GET",url:"https://cors-anywhere.herokuap
 getmessagecountjson.done(function(){
 getmessagecountjson = getmessagecountjson.responseJSON
 var getotherdata = $.ajax({type:"GET",url:"https://cors-anywhere.herokuapp.com/https://scratch.mit.edu/site-api/users/all/" + user,dataType:"json"});
-getotherdata = getotherdata.responseJSON
 getotherdata.done(function(){
-    start(getajaxresponse,getmessagecountjson,getotherdata)
+getotherdata = getotherdata.responseJSON
+start(getajaxresponse,getmessagecountjson,getotherdata)
 })
 })} else {errorMessage(getajaxresponse)}});
