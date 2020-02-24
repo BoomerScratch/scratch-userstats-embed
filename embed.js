@@ -109,6 +109,7 @@ elem.target = "_blank";
 elem.setAttribute("class","BottomText1")
 document.getElementsByTagName('center')[0].appendChild(elem);
 var elem = document.createElement('h5');
+elem.style.color = "#8a8a8a"
 document.getElementsByClassName('BottomText1')[0].appendChild(elem);
 elem.innerText = "Scratch userstats embed by Boomer001";
 var elem = document.createElement('a');
@@ -117,6 +118,7 @@ elem.target = "_blank";
 elem.setAttribute("class","BottomText2")
 document.getElementsByTagName('center')[0].appendChild(elem);
 var elem = document.createElement('h5');
+elem.style.color = "#8a8a8a"
 document.getElementsByClassName('BottomText2')[0].appendChild(elem);
 elem.innerText = "Github";
 }
