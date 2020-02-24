@@ -30,23 +30,23 @@ var elem = document.createElement('a');
 elem.href = "https://scratch.mit.edu/users/" + getUsername;
 elem.setAttribute("class","user-icon")
 elem.target = "_blank";
-document.getElementsByTagName('body')[0].appendChild(elem);
+document.getElementsByTagName('center')[0].appendChild(elem);
 var elem = document.createElement('img');
 elem.width = 80;
 elem.height = 80;
 elem.src = pfpSRC;
 document.getElementsByClassName('user-icon')[0].appendChild(elem);
 var elem = document.createElement('h1');
-document.getElementsByTagName('body')[0].appendChild(elem);
+document.getElementsByTagName('center')[0].appendChild(elem);
 elem.innerText = getUsername;
 if (isScratchTeamMember) {
 var elem = document.createElement('h2');
-document.getElementsByTagName('body')[0].appendChild(elem);
+document.getElementsByTagName('center')[0].appendChild(elem);
 elem.innerText = "Scratch Team Member";
 };
 if (featuredProjectData == null == false) {
 var elem = document.createElement('h3');
-document.getElementsByTagName('body')[0].appendChild(elem);
+document.getElementsByTagName('center')[0].appendChild(elem);
 elem.innerText = featuredProjectLabelName;
 var elem = document.createElement('a');
 elem.href = "https://scratch.mit.edu/projects/" + featuredProjectProjectID;
@@ -62,52 +62,52 @@ document.getElementsByClassName('featuredProject')[0].appendChild(elem);
 elem.innerHTML = featuredProjectTitle;
 };
 var elem = document.createElement('h2');
-document.getElementsByTagName('body')[0].appendChild(elem);
+document.getElementsByTagName('center')[0].appendChild(elem);
 elem.innerText = messageCount;
 var elem = document.createElement('h3');
-document.getElementsByTagName('body')[0].appendChild(elem);
+document.getElementsByTagName('center')[0].appendChild(elem);
 elem.innerText = "Unread messages";
 var elem = document.createElement('h2');
-document.getElementsByTagName('body')[0].appendChild(elem);
+document.getElementsByTagName('center')[0].appendChild(elem);
 elem.innerText = userID;
 var elem = document.createElement('h3');
-document.getElementsByTagName('body')[0].appendChild(elem);
+document.getElementsByTagName('center')[0].appendChild(elem);
 elem.innerText = "User ID";
 var elem = document.createElement('h2');
-document.getElementsByTagName('body')[0].appendChild(elem);
+document.getElementsByTagName('center')[0].appendChild(elem);
 elem.innerText = joinDate;
 var elem = document.createElement('h3');
-document.getElementsByTagName('body')[0].appendChild(elem);
+document.getElementsByTagName('center')[0].appendChild(elem);
 elem.innerText = "Date & time joined";
 var elem = document.createElement('h2');
-document.getElementsByTagName('body')[0].appendChild(elem);
+document.getElementsByTagName('center')[0].appendChild(elem);
 elem.innerText = "========About me========";
 var elem = document.createElement('h3');
-document.getElementsByTagName('body')[0].appendChild(elem);
+document.getElementsByTagName('center')[0].appendChild(elem);
 elem.innerHTML = aboutMe;
 var elem = document.createElement('h2');
-document.getElementsByTagName('body')[0].appendChild(elem);
+document.getElementsByTagName('center')[0].appendChild(elem);
 elem.innerText = "===================";
 var elem = document.createElement('h2');
-document.getElementsByTagName('body')[0].appendChild(elem);
+document.getElementsByTagName('center')[0].appendChild(elem);
 elem.innerText = "====What i'm working on====";
 var elem = document.createElement('h3');
-document.getElementsByTagName('body')[0].appendChild(elem);
+document.getElementsByTagName('center')[0].appendChild(elem);
 elem.innerHTML = whatImWorkingOn;
 var elem = document.createElement('h2');
-document.getElementsByTagName('body')[0].appendChild(elem);
+document.getElementsByTagName('center')[0].appendChild(elem);
 elem.innerText = "===================";
 var elem = document.createElement('h2');
-document.getElementsByTagName('body')[0].appendChild(elem);
+document.getElementsByTagName('center')[0].appendChild(elem);
 elem.innerText = Country;
 var elem = document.createElement('h3');
-document.getElementsByTagName('body')[0].appendChild(elem);
+document.getElementsByTagName('center')[0].appendChild(elem);
 elem.innerText = "Country";
 var elem = document.createElement('a');
 elem.href = "https://boomerscratch.github.io/scratch-userstats-embed";
 elem.target = "_blank";
 elem.setAttribute("class","BottomText1")
-document.getElementsByTagName('body')[0].appendChild(elem);
+document.getElementsByTagName('center')[0].appendChild(elem);
 var elem = document.createElement('h5');
 document.getElementsByClassName('BottomText1')[0].appendChild(elem);
 elem.innerText = "Scratch user embed by Boomer001";
@@ -115,7 +115,7 @@ var elem = document.createElement('a');
 elem.href = "https://github.com/boomerscratch/scratch-userstats-embed";
 elem.target = "_blank";
 elem.setAttribute("class","BottomText2")
-document.getElementsByTagName('body')[0].appendChild(elem);
+document.getElementsByTagName('center')[0].appendChild(elem);
 var elem = document.createElement('h5');
 document.getElementsByClassName('BottomText2')[0].appendChild(elem);
 elem.innerText = "Github";
@@ -129,6 +129,7 @@ elem.removeAttribute('height');
 };
 if (getParameterByName("user") == null) window.location.href = "https://boomerscratch.github.io/scratch-userstats-embed/embed?user=Boomer001"
 var user = getParameterByName("user");
+var timeOut = setTimeout(function(){errorMessage(getajaxresponse)},4000)
 var getajaxresponse = $.ajax({type:"GET",url:"https://cors-anywhere.herokuapp.com/https://api.scratch.mit.edu/users/" + user,dataType:"json"});
 getajaxresponse.done(function(){if (getajaxresponse.responseJSON.message == undefined) {
 getajaxresponse = getajaxresponse.responseJSON
@@ -140,4 +141,4 @@ getotherdata.done(function(){
 getotherdata = getotherdata.responseJSON
 start(getajaxresponse,getmessagecountjson,getotherdata)
 })
-})} else {errorMessage(getajaxresponse)}});
+})}});
