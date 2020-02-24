@@ -120,7 +120,6 @@ var elem = document.createElement('h5');
 document.getElementsByClassName('BottomText2')[0].appendChild(elem);
 elem.innerText = "Github";
 }
-}
 function errorMessage(ajaxResponse){
 document.getElementById('status').innerText = "Oops! Something went wrong! Status: " + ajaxResponse.status;
 var elem = document.querySelector('img');
