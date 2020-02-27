@@ -123,15 +123,23 @@ document.getElementsByClassName('BottomText2')[0].appendChild(elem);
 elem.innerText = "Github";
 }
 function errorMessage(ajaxResponse){
+if (ajaxResponse.status == undefined) {
+document.getElementById('status').innerText = "Oops! Something went wrong! Status: too long to load. Try reloading. If the problem persists, try closing your browser and reopening.";
+var elem = document.querySelector('img');
+elem.src = "https://en.scratch-wiki.info/w/images/archive/20130716144246%21404_Image.png";
+elem.removeAttribute('width');
+elem.removeAttribute('height');    
+} else {
 document.getElementById('status').innerText = "Oops! Something went wrong! Status: " + ajaxResponse.status;
 var elem = document.querySelector('img');
 elem.src = "https://en.scratch-wiki.info/w/images/archive/20130716144246%21404_Image.png";
 elem.removeAttribute('width');
 elem.removeAttribute('height');
+}
 };
 if (getParameterByName("user") == null) window.location.href = "https://boomerscratch.github.io/scratch-userstats-embed/embed?user=Boomer001"
 var user = getParameterByName("user");
-var timeOut = setTimeout(function(){errorMessage(getajaxresponse)},4000)
+var timeOut = setTimeout(function(){errorMessage(getajaxresponse)},5000)
 var getajaxresponse = $.ajax({type:"GET",url:"https://cors-anywhere.herokuapp.com/https://api.scratch.mit.edu/users/" + user,dataType:"json"});
 getajaxresponse.done(function(){if (getajaxresponse.responseJSON.message == undefined) {
 clearTimeout(timeOut)
